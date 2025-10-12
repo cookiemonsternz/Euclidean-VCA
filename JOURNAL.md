@@ -52,3 +52,62 @@ Anyways, that'll do for today. Tomorrow I'm going to work on getting a model of 
 
 Tschuss!  
 
+## 10/13/2025 - Designed Circuit  
+
+## Circuit Design
+
+Time to start the circuit design.
+For this, I'm going to begin with what I think is the simplest part, the envelope generator.
+
+![ar-envelope](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTMyMiwicHVyIjoiYmxvYl9pZCJ9fQ==--af28c3a3583252817d1480304afe06a87a692e2f/ar-envelope.png)
+
+Even just looking at the desired change, it seems obvious that the solution for this will be some kind of capacitor based circuit, and thats absolutely correct.
+
+A really interesting way to view this problem is using summed sines. A square wave is (theoretically) the sum of an infinite number of sine waves, as shown below.
+
+![Sum Of sines](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTM0MywicHVyIjoiYmxvYl9pZCJ9fQ==--ce86a057a8f66705753a6cd568b9553847a73fb8/2025-10-10%2B17-23-11.gif)
+
+Each sine wave added has to also increase in frequency, and as we remove the higher frequency sine waves, it looks less and less like a square wave and more like a curved sine wave. So, given our square electrical signal, which we can consider to be composed of near infinitely many sine waves, if we can find a way to filter out the higher frequency sine waves, we will be left with just the low frequency ones, which look far more like what we want than just a square wave. 
+
+Handily, there is a super simple circuit which can do this for us. A low pass filter.
+
+[![Low pass filter circuit](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTM0NCwicHVyIjoiYmxvYl9pZCJ9fQ==--b27fe7c31f1159942e7780ecf2b50728838247ff/image.png)](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEA2AnNAzAFi2DCxItsxkkFIQliqBTAWjDACgAlELOEAJgHZuQGZAA4e-KDyo9oSbjIkwEzAMYdkWMQKzrB3ShoSx4xk5DANeHaKhuoEvYQ+6dUkATDgQYLAOZqNGHr+gkIKzADuwXwCBALRUMx6lrGaVMiU8RoA8gCuAC4ADvnMAE5R4pwZ4pSE8MwA9hwoGjXc3KgQSB6eEu4JQA![image.png](/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTg3NCwicHVyIjoiYmxvYl9pZCJ9fQ==--fa73637922d3d022117bb2187254dcadd9b8b2bb/image.png)
+)
+
+Using this incredibly simple setup, just a resistor and a capacitor, we can filter out a reasonable accurate range of frequencies just by changing the values of R1 and C1 through the simple formula:
+Fc = 1 ÷ (2π[R1][C1])
+
+This also means that by changing the value of R1, via a potentiometer, we can control the cutoff frequency of the lowpass filter and thus how sharp or round the envelope output is. 
+
+So a very basic A/R envelope might look something like this:
+[![Basic Attack / release envelope generator](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTM0NSwicHVyIjoiYmxvYl9pZCJ9fQ==--0daa12a44648894530ba29bb5cb835aefb0c4be4/image.png)](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcB2AzNALAJgQrWwBOPDSANlRAUiqpoQFMBaMMAKAGMQyAOHkVFhq9+qHhhATGTZANjJsGXmUKFIWFWCxRYkCJDYBzbnwHiT-UjWtsAStywTB9QtudQQ2pFmjffHmAQ2AHcLASEQZAj3AyFZKJp3ZF5wmgkAeQBXABcABxy2AA9uagExbjInDAgJVhBbdmKyBFFcbiiBFslwCABhdjAFBycIkVSPMHg4HVRqshAAQQB6WxCS+dRICWb5rA6DUJ3PDrG97QOws7CYtgB7bsqPUlVaGHgiBFQtJBptc7YgA)
+$^*You can click on the image to test the circuit yourself*$
+
+The only problem is that when you change the value of the potentiometer, both the time of the attack and release change simultaneously. Instead what we want is to make individually adjustable attack and release times. 
+
+[![Adjustable Attack / Release](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTg3MiwicHVyIjoiYmxvYl9pZCJ9fQ==--2f67a91ca3191bae2abe0ceb5941585014e38891/image.png)](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEA2AnNAzAFi2DCxItsxkkFIQliqBTAWjDACgAlEAJkgA5OB2DuD7J+gyoKQdok6VCjTmAd049RnDljWQl6zRwG7D25Rw1rTmjFyg6LIK+IQiHNsHz1P71ly8qF4lDAcyGastADOAJbhAC4AhgB2AMa0zG4eInYudn4BgdBg3A55JRggYVGxiSm2ZnYcnjm23LwYRJwtHbzGXb3ZnT39rd7WPRydXLzjvGCoYs0zc15+S4PWs4LZZmuUPhjOozpblvtGzAAm9qdZ3Hp1IOe0AGZxAK4ANjEX9rfLVwfiB7PN6fI6-Oy4TLbMGWayQv49eEueH6ebKFFmFEGRGkNRYZB6bHMJIgfGEwRkv6aBCwEp0sAMPicWDcVCQQptHAIPgIXmaGBwCDaADmpIJVPFGFOgR0lNRVDAgnl2i4TIISoMTnEBk0AHlXjEAA4G5gAe04InFlCwkFQqCo8gCqGETgacjENiAA)
+
+When we charge up the capacitor, current flows through the top potentiometer and diode, and when releasing the charge, it flows backwards through the bottom diode and potentiometer. So now we have an effectively complete A/R envelope.
+
+## Amplifier
+
+I'm not going to go into too much detail for the amplifier circuit, but it follows a very standard long tailed pair design, which Moritz Klein has a great video explaining. 
+
+I had to make several changes to the circuit as well, because the design shown in the video used a dual supply rail of -12v, 0v, and 12v. Unfortunately the entire supply range I have available is 0v-9v, so I needed to do something a bit different.
+
+The ac signal input oscillates around ground with an amplitude of around 40-50 mV. Because there is an op amp in the circuit, with a VSS of gnd, all signals that go below ground will just be clipped to ground. Instead what we can do is offset the signal by 4.5v, a new virtual ground. Then we can bias all of our transistors as well, and when we amplify it we have a decent amount of headroom. After this we can just use a basic capacitor to filter out the dc offset. 
+
+[![Long tailed pair amplifier](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTg3MywicHVyIjoiYmxvYl9pZCJ9fQ==--7ae8d0d853dd0819ff97782a7a7ec4bbb568fb45/image.png)](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l5YCsA2ATIkBmAHK6B2NRXMAFkwE4LJlSREL6Rz6BTAWjDACgAnEVJGzgwqAUPAUxkcPEh8skOlzGYlk6bPjcw+OoOErFy0eHrwo0DACVWAZwCWdgC4BDAHYBjVt0H4BKCAUyAEhpMJ0AGoAwtHcAO7GGknoIfKJBsmZqKh06eLCOXSkcAK5UAkpgSUyqRUZEkUFAvjS3M7ghALYhY09UGbspLBgFPhq2NTYYLQMIEMjyBTYiIg5OJg5-mAWACasAGauAK4ANs7cm2YyYBxgmAM3Vo8CZhAyN+1YmCGo-Wr6fo3ebDBDBbBLRCYEqTBAgxYUciQShrMhoRSlHiJAGhFKterfX7-ZCFIEKH6k4QUrAkgY7OC+SD+aks2k1ZggSIAcQAcgARSo4oXqTBrAlCsV1UVtBpU9SZaUEhWSwKK+R+cCkOjUsjFUpRXkC-i67qGLU04Q3bSJE1-QxdO0VY3mx20U0DHJyBTsprhWrlK3afg+6rYWqBQMM-hSlVhK6R+SeEBux0zd10RAcfzDVAbVCtbCkYiES2wOHyY1EwwhakJ9VM8A12lp9l0Q3cayN93sK6OmT6UowZEvGCIDvJiMTkI9zT9mSMD6WMeJZCT1c1tq7KdYMStGS9kD7I5nC6JPc7kD4QsXxOX69XK90MMcsBluTvuS3dj+bDQUiENRdEQJRch6NIy3eaAeEERhzwfQQQGfPI3yUH8-wAhB8GA0hQIhSw4HecBKkfRCZHPZ98nImR11IioNRo58aKMNt+W4ABzS8EOfc9gkeYj713a8PkZfwSLI68Zw5GI4g1QtLUQ8J5iuKJYgUOSBnUt1IzUxS3XU0R5Ppesf0UgyFOrfsQHbRJ9L+IJTDM-JNLoChTC07hXHssRFKobzhGEBctDkZhoFzaYoVICgflaJZilCnAkCELC-GQTAICMhlEl85gAqkPisry+dTGErLiq8m8RKCQqqrESSDVY4NnzqP1CQ9QRtA1FrMB+HL9zZTlrN63FEFMOp8hapo1kKANKhGsQ6im3F5E8xbcmoxoSkQoI6Q-RDYGwNQ9CZURNhoPahEOsgoSUVz8EYDL8mQDb1vtNIFCe176Ds3Q0jKL1EkWn6vumvJKg+gRNtoWpNtvKGIeo-o1o5PBgI-NHSCzEKwrAaZ8C4CE9CEiCnWTRHIf+BC60qkkqQQmmsDFFiBRXMmyIQpGK046HxP0GGgt8Lg715mR1I514w0xRlGFcsQ3Rl8A7OQuR-yxhLgOwZKmVSyCCLpbgAA95lQRhBHSlhBGKCGQAAGQAe3cNiAB07AAFVcBxTlYXZnYABXd3gDe3UYHiwm5eN5kA+WiZ2ADEPecVgA8N2YQRFyAMB7bMrZ9234kT2P48ThwHcDg6IEzoJSh7S3ym5VjDaBuasE2kaMAj6J7ecXhbdOZ3Ih7tw2J8XR5uqXtQ0XfwMAwRdR05AfXCH7hbdJrabhyVz8N1odt6wARAuNrBl+YYE5yocR8PQMxvP3bggA)
+
+## Complete Circuit
+
+Combining these two parts together with a bit of buffering and the power circuitry, we get the (near) complete circuit.
+
+[![Complete circuit](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTg3NSwicHVyIjoiYmxvYl9pZCJ9fQ==--a75028412c796e58c23d1f3c403e1b808746fa77/image.png)](https://tinyurl.com/238v266v)
+
+This is still missing the mcu to generate the actual sequence data, but it seems to be functional aside from this from my testing.
+
+So that makes this stage of design effectively complete. I'm currently breadboarding it to check that it does work in reality, and once that's done I'll make some tweaks and start on the pcb design.
+
+  
+
