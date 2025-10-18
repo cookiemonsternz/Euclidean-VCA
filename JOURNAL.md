@@ -111,3 +111,20 @@ So that makes this stage of design effectively complete. I'm currently breadboar
 
   
 
+## 10/18/2025 - Layout Schematic + Routed PCB  
+
+Today I quickly laid out the schematic, which consisted of just effectively copying the circuit sim.
+I did have to spec some parts like the transistors, but I mostly just tried to stick to bits I had laying around. 
+
+Heres the completed schematic:
+![Schematic](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjkxMywicHVyIjoiYmxvYl9pZCJ9fQ==--9b87529c0750eed4083df6568a569007c772afc0/Screenshot%202025-10-18%20172440.png)
+
+I did also chuck in the mcu and surrounding circuitry, for which I chose an arduino nano, again because I have one lying around. I was going to use an attiny chip, but lack of pins and i2c support for the display convinced me otherwise. I've got three rotary encoders to control pulse, step and speed. The Arduino and all the encoders aren't mounted on the board just to save space.
+
+Next I laid out all the components on the pcb, which was a bit of a challenge, but after a couple attempts I settled on this layout:
+![Component Layout](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjkxNCwicHVyIjoiYmxvYl9pZCJ9fQ==--ea7f46355bbe99c78f688a42f0a43b1f3ae7c4e8/Screenshot%202025-10-18%20191505.png)
+
+And after that, I quickly routed the pcb, and ended up with an almost finished product!
+![Routed](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjkxNiwicHVyIjoiYmxvYl9pZCJ9fQ==--2db2d9a605854d41e7eb7998d19bfff252de635d/Screenshot%202025-10-18%20193149.png)
+  
+
