@@ -111,7 +111,7 @@ So that makes this stage of design effectively complete. I'm currently breadboar
 
   
 
-## 10/18/2025 - Layout Schematic + Routed PCB  
+## 10/18/2025 7 PM - Layout Schematic + Routed PCB  
 
 Today I quickly laid out the schematic, which consisted of just effectively copying the circuit sim.
 I did have to spec some parts like the transistors, but I mostly just tried to stick to bits I had laying around. 
@@ -127,4 +127,23 @@ Next I laid out all the components on the pcb, which was a bit of a challenge, b
 And after that, I quickly routed the pcb, and ended up with an almost finished product!
 ![Routed](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjkxNiwicHVyIjoiYmxvYl9pZCJ9fQ==--2db2d9a605854d41e7eb7998d19bfff252de635d/Screenshot%202025-10-18%20193149.png)
   
+
+## 10/18/2025 9 PM - Case Design  
+
+Onto the next logical step!
+Case design.
+
+I designed the PCB to fit within a standard 1590b guitar pedal case, and after a bunch of consideration I've decided that I'd like to go with a metal bottom enclosure with a wooden top case. 
+
+This is because plastic is simply not durable enough for a guitar pedal, excluding longer chain polymers like HDPE or PVC, which are simply not feasible to have produced. In contrast, it's reasonably easy to find metal cases online for pretty cheap, so theres really no detriment.
+
+![1590b case](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjkxOCwicHVyIjoiYmxvYl9pZCJ9fQ==--705b9ca7dd6b273698c7623f2cb31136cea00589/image.png)
+
+Instead of a metal top plate, however, I've decided to go with a laser cut wooden case. This is mainly because this pedal includes an led matrix, and I feel like routing out a pretty large rectangle from solid aluminium would be a bit beyond my capabilities. My school also has a laser cutter that I can use for cutting and engraving, which should be good for the pedal design (aesthetics matter ❤️).
+
+With that out of the way, I booted up fusion and started the design.
+![case top](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjkyMywicHVyIjoiYmxvYl9pZCJ9fQ==--f8017d772d8a5c3faf470c19362f077b07ab33aa/image.png)
+
+This plate was super simple, but lots of double checking spacing between knobs to make sure I had enough space. I'm pretty sure it all fits, but I'll make sure to double check before cutting the holes.
+Plate is 2mm ply, and it is going to be engraved for knob labels and some designs as well.  
 
