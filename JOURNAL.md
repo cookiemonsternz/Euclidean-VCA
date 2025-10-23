@@ -199,3 +199,13 @@ Not terrible, but not amazing either. I'm going to try and hunt some more and se
 ![My BOMS](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDYwNywicHVyIjoiYmxvYl9pZCJ9fQ==--bdb9866a250a8cbf29568401417c6040e726f708/image.png)
 My boms, top is ideal, excl. shipping and pcb/pcba costs, so components only, bottom is actual quoted numbers.  
 
+## 10/23/2025 4 PM - Designed top case  
+
+I quickly (-not) made a design for the top case of the enclosure. This is going to be a 2-5 (depending on what i can get) sheet of some form of wood, preferably not plywood. Its going to be cut and engraved with a laser cutter which i've got access to at school. I might also dig a bit out of the actual knob controls with a cnc or dremel to chuck in some glow in the dark spray paint as well.
+
+Anyway, here's the design I came up with:
+![Design](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDYzNCwicHVyIjoiYmxvYl9pZCJ9fQ==--ede1820747cf365d894507a963c66325b620405e/image.png)
+
+I think the knobs make some sense:
+The top left is step, top middle pulse, top right speed, the bottom left attack, and bottom right release.  
+
