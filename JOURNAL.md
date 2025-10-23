@@ -6,10 +6,6 @@
   ==================================================================
 -->
 
-This is my journal of the design and building process of **Euclidean VCA**.  
-You can view this journal in more detail on **Hack Club Blueprint** [here](https://blueprint.hackclub.com/projects/340).
-
-
 ## 10/9/2025 - Design specifications / Early schematic work.  
 
 Alrighty! Highway 2.0 I guess.
@@ -146,4 +142,47 @@ With that out of the way, I booted up fusion and started the design.
 
 This plate was super simple, but lots of double checking spacing between knobs to make sure I had enough space. I'm pretty sure it all fits, but I'll make sure to double check before cutting the holes.
 Plate is 2mm ply, and it is going to be engraved for knob labels and some designs as well.  
+
+## 10/23/2025 - Redid the pcb + case  
+
+After showing this project to my friend who builds pedals a decent amount, he pointed out some very glaring design flaws.
+
+First of all, there was no space for ports, and I would likely not be able to fit everything in the case. Thats actually pretty much the main problem lol...
+
+## The Redesign
+I eventually decided to move to a 1590BB case rather than a 1590A case, just a bit bigger and it would allow me to add a tap tempo button :)
+
+Here's the sizes for comparison:
+![1590a vs 1590bb enclosure sizes](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDU4NSwicHVyIjoiYmxvYl9pZCJ9fQ==--60166305b4e20c2e93a7c171a4252a14b8d3ca6d/image.png)
+
+Not only is it a bit wider, but it's also significantly deeper, which should help with fitting all the parts.
+
+After this, I laid out all the knob locations and the led matrix, and was left with a bit of a problem.
+![Pcb Layout](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDU4NiwicHVyIjoiYmxvYl9pZCJ9fQ==--1ff4151376349b02ec59f410af9904582ccc506b/Screenshot%202025-10-22%20183931.png)
+Yeah.. no way I was fitting all of those components on the pcb. I had a couple options here:
+- Bigger Case
+- No LED Matrix
+- No Tap Tempo button
+I really didn't want any of these, so I went with the secret fourth option: Make all the small components smd and have it assembled by jlcpcb.
+
+I also decided to put the led matrix and max7219 chip on the pcb rather than on a seperate board, so that I could also fit the arduino on the pcb.
+My final component layout looked like this:
+![component layout](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDU4NywicHVyIjoiYmxvYl9pZCJ9fQ==--c743bae680ef6f78db696b0f9dd0afaf5baedcfd/Screenshot%202025-10-23%20122555.png)
+
+Not too shabby!
+Then routing:
+![Routed board](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDU4OCwicHVyIjoiYmxvYl9pZCJ9fQ==--b34229574402873f26dddd3d0e392ac791ae2633/Screenshot%202025-10-23%20125223.png)
+
+Then realizing the arduino is on the wrong side of the board so rerouting half of it:
+![Re-routed board](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDU4OSwicHVyIjoiYmxvYl9pZCJ9fQ==--e6d2d7c7de6c6347aa25b656f0b5a09cda300a60/Screenshot%202025-10-23%20132156.png)
+
+And that's the new design done!
+
+I quickly chucked everything in 3d to double check all the sizes in the actual enclosure:
+![3d Board top](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDU5MCwicHVyIjoiYmxvYl9pZCJ9fQ==--4e65fb4d67a671fb602df92715af1fc3cb0010e3/Screenshot%202025-10-23%20132214.png)
+![3d board bottom](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDU5MSwicHVyIjoiYmxvYl9pZCJ9fQ==--7c73c51321a1b3aef50d0f58b69c91fa3929823a/Screenshot%202025-10-23%20132228.png)
+![board in case](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDU5MiwicHVyIjoiYmxvYl9pZCJ9fQ==--0600b36802fc671ec819e6666b7fa6a36f2a7836/Screenshot%202025-10-23%20133725.png)
+
+And its all looking pretty decent! Next up is to get a quote from JLC for pcba, hopefully under 30ish bucks.
+  
 
