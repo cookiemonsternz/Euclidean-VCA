@@ -143,7 +143,7 @@ With that out of the way, I booted up fusion and started the design.
 This plate was super simple, but lots of double checking spacing between knobs to make sure I had enough space. I'm pretty sure it all fits, but I'll make sure to double check before cutting the holes.
 Plate is 2mm ply, and it is going to be engraved for knob labels and some designs as well.  
 
-## 10/23/2025 - Redid the pcb + case  
+## 10/23/2025 1 PM - Redid the pcb + case  
 
 After showing this project to my friend who builds pedals a decent amount, he pointed out some very glaring design flaws.
 
@@ -185,4 +185,17 @@ I quickly chucked everything in 3d to double check all the sizes in the actual e
 
 And its all looking pretty decent! Next up is to get a quote from JLC for pcba, hopefully under 30ish bucks.
   
+
+## 10/23/2025 2 PM - Cost optimizing  
+
+I whipped up a couple BOMS quickly, and got my quotes from jlcpcb!
+
+For the pcba + pcb + shipping it came to $28.30, which is pretty decent (especially for shipping to nz lol). Then I went onto aliexpress and tried to find a bunch of parts. This was a bit more rough :(
+
+I already had my original links (I build a bom as I work on the pcb) but after adding them all it came to like 70NZD (40ish US i think) which wasn't great. I tried to cut down on shipping by optimizing for the 'choice' parts, and I managed to find some cheaper options for some of the parts, but unfortunately, a lot of the cost is just in the shipping. Eventually, I managed to get it down to 60NZD (30ish usd). 
+
+Not terrible, but not amazing either. I'm going to try and hunt some more and see if I can source parts locally instead for footswitches, etc.
+
+![My BOMS](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDYwNywicHVyIjoiYmxvYl9pZCJ9fQ==--bdb9866a250a8cbf29568401417c6040e726f708/image.png)
+My boms, top is ideal, excl. shipping and pcb/pcba costs, so components only, bottom is actual quoted numbers.  
 
