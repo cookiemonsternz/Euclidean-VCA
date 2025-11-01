@@ -209,3 +209,14 @@ Anyway, here's the design I came up with:
 I think the knobs make some sense:
 The top left is step, top middle pulse, top right speed, the bottom left attack, and bottom right release.  
 
+## 11/1/2025 - Re-double checked the circuit  
+
+Given the very large amount of changes I'd made to the circuit since my last breadboarding session, I decided it would probably be good to once again double check that everything still worked (also there were a few issues on the first breadboard I wanted to iron out). After a couple hours and one blown up potentiometer (don't ask how) I am happy to report a resounding success. I constructed the entire vca and envelope generator section, including power supply but skipping over the digital circuitry, and everything (eventually) worked perfectly :)
+
+It took a couple rejiggings of the bias potentiometer and also halving the v-ground to account for the transistor activation current (forgor what its called) so that at 0v cv, it would be at full volume rather than cutting out at around 1v.
+
+Unfortunately my phone is dead and takes hours to charge, so you'll have to cope with webcam photo sorry.
+![WIN_20251101_18_51_25_Pro](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NzMzMCwicHVyIjoiYmxvYl9pZCJ9fQ==--86cd110231e4d4b4f6e95fb43feeca6965d95875/WIN_20251101_18_51_25_Pro.jpg)
+*All my regular breadboards were being used 😭*
+  
+
