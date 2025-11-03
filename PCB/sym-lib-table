@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "3362P-1-254LF")(type "KiCad")(uri "${KIPRJMOD}/3362P-1-254LF/3362P-1-254LF.kicad_sym")(options "")(descr ""))
+  (lib (name "LED_1088as")(type "KiCad")(uri "${KIPRJMOD}/1088as/LED_1088as.kicad_sym")(options "")(descr ""))
+)
