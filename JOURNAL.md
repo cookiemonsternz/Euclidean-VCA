@@ -220,3 +220,10 @@ Unfortunately my phone is dead and takes hours to charge, so you'll have to cope
 *All my regular breadboards were being used 😭*
   
 
+## 11/3/2025 - Re-did the top art  
+
+I decided that actually I hated the current art I'd made for this project, so I decided to draw up a new design. This time I got to showcase a bit more actual artistry (still terrible i know lol) but I'm overall pretty happy with the results, did take a decent amount of time unfortunately, but I'll still try to push through and ship this today.
+
+![Top plate art](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Nzk1MywicHVyIjoiYmxvYl9pZCJ9fQ==--b8f2c9c43da608d9157e9a89210f58e6f4dd8c8f/image.png)
+  
+
